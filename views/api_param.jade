@@ -1,0 +1,14 @@
+table
+   thead
+     tr
+       td Name
+       td Type
+       td Description
+   tbody
+     - console.log(data);
+     - for(var i=0; i < data.length ; i++)
+      - var param = data[i];
+        tr
+          td=param.PARAM_NAME
+          td=param.PARAM_TYPE
+          td=param.DESCRIPTION

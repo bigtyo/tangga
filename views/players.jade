@@ -1,0 +1,26 @@
+extends layout
+
+block content
+ .container
+  h1 #{game.GAME_NAME} - Player Ranking
+  .row
+    table
+      thead
+        tr
+          td(style='width : 200px') Position
+          td(style='width : 200px') Player Id
+          td(style='width : 200px') Achievement
+          td(style='width : 200px') Score
+      tbody
+      - for(var i=0;i<data.length;i++)
+         tr
+           td(style='width : 200px')=i+1
+           td(style='width : 200px')=data[i].USER_ID
+           td(style='width : 200px')=data[i].ACHIEVEMENT
+           td(style='width : 200px')=data[i].SCORE
+  
+  .row
+    .col-md-3
+      Online Players : xxxx
+    .col-md-3
+      Players Total : xxxx

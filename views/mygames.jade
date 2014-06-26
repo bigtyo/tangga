@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .container
+    - if(data == null)
+      .row
+        .span12
+          "No games yet"
+    - else  
+      - for(var i=0; i < data.length ; i++)
+        - var game = data[i];
+         .row
+           .row
+             .col-md-3
+               h3
+                 a(href="/games/#{game.GAMEID}")=game.GAME_NAME
+             .col-md-12
+               span=game.DESCRIPTION
+                  
+           .row
+             .col-md-1
+               a(href="/games/#{game.GAMEID}/achievement") Achievements
+             .col-md-1
+               a(href="/games/#{game.GAMEID}/players") Players
+    
+
+    .row
+      br
+      a.btn.btn-default(href="#addnewgame") Add new game

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    script(type="text/javascript", src="/js/api.js")
+    - if(data == null)
+      .row
+        .span12
+          "No Api yet"
+    - else  
+      - for(var i=0; i < data.length ; i++)
+        - var api = data[i];
+        - var tblid = "tbl" + api.APIID; 
+         .row
+           .row
+             .col-md-3
+               h3=api.API_NAME
+             .col-md-12
+               span=api.DESCRIPTION
+             .col-md-12
+               a(href="#", onclick="getparam(#{api.APIID})") more
+                  
+           .row(id="#{tblid}")
+             

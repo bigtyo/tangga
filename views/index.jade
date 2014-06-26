@@ -1,0 +1,8 @@
+extends layout
+
+block content
+ if typeof(formname) !== 'undefined'
+  h1= title + ' - ' + formname
+ else
+  h1= title
+ p Welcome to #{title}

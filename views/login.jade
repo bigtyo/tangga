@@ -1,0 +1,12 @@
+extends layout
+
+block content
+ .container
+  
+   div
+    input#login(type='text',name='userid')
+   div
+    input#password(type='password',name='password')
+   div
+    a.btn(href="#",onclick="dologin();") login
+   script(type="text/javascript", src="/js/login.js")
