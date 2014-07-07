@@ -60,7 +60,7 @@ CREATE TABLE `api` (
   `PROTOCOL` varchar(45) DEFAULT NULL,
   `RETURN` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`APIID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `api` (
 
 LOCK TABLES `api` WRITE;
 /*!40000 ALTER TABLE `api` DISABLE KEYS */;
-INSERT INTO `api` VALUES (1,'/score/getmyscore','get player score by his token','get','https','score object');
+INSERT INTO `api` VALUES (1,'/score/getmyscore','get player score by his token','get','https','status, score object'),(2,'/users/register','register new player','post','https','status,user created new token and message'),(3,'/score/updatemyscore','update player score','post','https','status and message'),(4,'/score/getleaderboard','get leaderboard by game id','get','http','leaderboard object list'),(5,'/users/userlogin','login the user to system, each time this called, new token will be created','post','https','status,message, and user token save this for future lauch'),(6,'/users/relogin','if app relaunches call this to verify the user session','post','https','status,message');
 /*!40000 ALTER TABLE `api` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +87,7 @@ CREATE TABLE `api_param` (
   `PARAM_TYPE` varchar(200) DEFAULT NULL,
   `DESCRIPTION` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`PARAMID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `api_param` (
 
 LOCK TABLES `api_param` WRITE;
 /*!40000 ALTER TABLE `api_param` DISABLE KEYS */;
-INSERT INTO `api_param` VALUES (1,1,'player_token','varchar','player token auto generated when player logged in');
+INSERT INTO `api_param` VALUES (1,1,'player_token','varchar','player token auto generated when player logged in'),(2,2,'username','varchar','player username must be unique, used for login'),(3,2,'password','varchar','user password'),(4,2,'email','varchar','user email'),(5,2,'name','varchar','user complete name'),(7,3,'usertoken','varchar','valid user token'),(8,3,'userid','varchar','login username'),(9,3,'gameid','int','your game id'),(10,3,'scrore','decimal','new score to be updated'),(11,4,'gameid','int','your game id'),(12,5,'userid','varchar','login username'),(13,5,'password','varchar','user password'),(14,6,'userid','varchar','login username'),(15,6,'token','varchar','valid user token');
 /*!40000 ALTER TABLE `api_param` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +214,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('bigtyo','aaaa','2014-06-18 08:34:33','mochammad.raditya@gmail.com','asdasdasd'),('bigtyo2','bbbbb','2014-06-02 09:00:21','mochammad.raditya2@gmail.com','bbbbb');
+INSERT INTO `user` VALUES ('bigtyo','74b87337454200d4d33f80c4663dc5e5','2014-07-07 09:10:27','mochammad.raditya@gmail.com','86b71663-bde3-4139-b8c3-bf04ca052bae'),('bigtyo2','a21075a36eeddd084e17611a238c7101','2014-07-07 09:10:17','mochammad.raditya2@gmail.com','e2b74959-a7e8-4cbd-84b8-a7fdf1ac08bb'),('bigtyo3','dd8160ad63c98b9f61d3b3f714f03ee2','2014-07-07 09:12:40','raditya.pratama@gmail.com','322125d1-f29b-4336-b492-f589c51cc6d8');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-06-26 20:21:41
+-- Dump completed on 2014-07-07 16:59:20

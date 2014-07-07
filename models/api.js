@@ -4,7 +4,7 @@ var param_model = require('./api_param');
 
 exports.getallapi = function(callback){
 	var data = {};
-	var select = "select * from api";
+	var select = "select * from api order by api_name asc";
 	connection.query(select,function(err,rows,fields){
 		if(err){
 			data.status = 505;

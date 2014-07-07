@@ -50,8 +50,11 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/users/register',user.register);
+app.post('/users/userlogin',user.userlogin);
+app.post('/users/userrelogin',user.userrelogin);
 app.get('/score/getmyscore',score.getmyscore);
 app.post('/score/updatemyscore',score.updatemyscore);
+app.get('/score/getleaderboard',score.getplayerscorebygameid);
 app.get('/api/getparam',index.getparambyapi);
 
 

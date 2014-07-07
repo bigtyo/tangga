@@ -35,3 +35,12 @@ exports.updatemyscore = function(req,res){
 	});
 };
 
+exports.getplayerscorebygameid = function(req,res){
+	var gameid = req.query.gameid;
+	
+	score_model.getplayerscorebygameid(gameid,function(score_data){
+		res.send(JSON.stringify(score_data));
+	});
+};
+
+
