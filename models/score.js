@@ -54,7 +54,7 @@ exports.newScore = function(userid,gameid,callback){
 exports.updatescore = function(userid,gameid,score,callback){
 	var data = {};
 	var update = "UPDATE score set score = "+score+" WHERE gameid = "+gameid+" and userid = "+userid;
-	connection.query(insert,function(err, rows, fields){
+	connection.query(update,function(err, rows, fields){
 		if(err){
 			data.status = 505;
 			data.message = "update score system error";
