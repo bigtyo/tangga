@@ -17,7 +17,10 @@ exports.verifyUserToken = function(userid,usertoken,callback){
 				data.message = "user name invalid";
 				
 			}else{
+				console.log(rows[0].TOKEN + "\n");
+				console.log(usertoken + "\n");
 				if(rows[0].TOKEN === usertoken){
+					
 					data.status = 1;
 					
 				}else{
